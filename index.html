@@ -51,12 +51,53 @@
       background-color: var(--color-image-back);
       overflow: auto;
     }
+
+    #theme-switch {
+      background: none;
+	    color: inherit;
+	    border: none;
+	    padding: 0;
+	    font: inherit;
+	    outline: inherit;
+      position: absolute;
+      right: 10px;
+    }
   </style>
 </head>
 
 <body>
   <div style="width: 60%;margin-left:auto;margin-right:auto;">
     <h1>1950s Rock</h1>
+    <button id="theme-switch">Dark</button>
+    <script>
+      const btn = document.querySelector("#theme-switch");
+      let isDark = false;
+
+      const styles = {
+        light: {
+          colorImageBack: "#e3e3e3",
+          colorImageBorder: "#c0c0c0",
+          colorBg: "white",
+          colorText: "black",
+        },
+        dark: {
+          colorImageBack: "#1c1c1c",
+          colorImageBorder: "#3f3f3f",
+          colorBg: "black",
+          colorText: "white",
+        }
+      }
+
+      const r = document.querySelector(':root');
+
+      btn.addEventListener("click", e => {
+        let style = isDark ? styles.light : styles.dark;
+        r.style.setProperty("--color-image-back", style.colorImageBack);
+        r.style.setProperty("--color-image-border", style.colorImageBorder);
+        r.style.setProperty("--color-bg", style.colorBg);
+        r.style.setProperty("--color-text", style.colorText);
+      });
+    </script>
     <hr />
     <section>
       <div style="float: right; margin: 5px;" class="image-back">
