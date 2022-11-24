@@ -72,7 +72,7 @@
 
 <body>
   <div style="width: 60%;margin-left:auto;margin-right:auto;">
-    <button id="theme-switch">Theme: Dark</button>
+    <button id="theme-switch">Theme: Light</button>
     <h1>1950s Rock</h1>
     <script>
       const btn = document.querySelector("#theme-switch");
@@ -102,7 +102,7 @@
         r.style.setProperty("--color-bg", style.colorBg);
         r.style.setProperty("--color-text", style.colorText);
 
-        btn.innerText = "Theme: " + (isDark ? "Dark" : "Light");
+        btn.innerText = "Theme: " + (isDark ? "Light" : "Dark");
 
         isDark = !isDark;
       });
