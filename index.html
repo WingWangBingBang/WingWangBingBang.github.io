@@ -58,17 +58,18 @@
 	    border: none;
 	    padding: 0;
 	    font: inherit;
+      cursor: pointer;
 	    outline: inherit;
-      position: absolute;
-      right: 10px;
+      float: right;
+      margin-top: 20px;
     }
   </style>
 </head>
 
 <body>
   <div style="width: 60%;margin-left:auto;margin-right:auto;">
+    <button id="theme-switch">Theme: Dark</button>
     <h1>1950s Rock</h1>
-    <button id="theme-switch">Dark</button>
     <script>
       const btn = document.querySelector("#theme-switch");
       let isDark = false;
@@ -96,6 +97,10 @@
         r.style.setProperty("--color-image-border", style.colorImageBorder);
         r.style.setProperty("--color-bg", style.colorBg);
         r.style.setProperty("--color-text", style.colorText);
+
+        btn.innerText = "Theme: " + (isDark ? "Dark" : "Light");
+
+        isDark = !isDark;
       });
     </script>
     <hr />
