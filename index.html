@@ -13,8 +13,20 @@
 
   <title>1950s Rock</title>
   <style>
+    :root {
+      --color-image-back: #e3e3e3;
+      --color-image-border: #c0c0c0;
+      --color-bg: white;
+      --color-text: black;
+    }
+
+    body {
+      background-color: var(--color-bg);
+    }
+
     * {
       font-family: sans-serif;
+      color: var(--color-text);
     }
 
     p {
@@ -35,8 +47,8 @@
 
     .image-back {
       padding: 4px;
-      border: 1px solid #c0c0c0;
-      background-color: #e3e3e3;
+      border: 1px solid var(--color-image-border);
+      background-color: var(--color-image-back);
       overflow: auto;
     }
   </style>
